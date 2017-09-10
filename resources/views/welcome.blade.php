@@ -1,95 +1,92 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
+@section('title', 'Online Police Clearance')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+@section('content')
 
-            .full-height {
-                height: 100vh;
-            }
+<!-- welcome screen -->
+<div class="row">
+    <div class="col-md-12">
+        
+        
+        <div class="col-md-8"></div>
+        
+        <div class="col-md-4">
+            
+            <div class="register-box">
+            {{--   <div class="register-logo">
+                <a href="/login"><b>Login</b></a>
+              </div> --}}
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+              <div class="register-box-body">
+                <p class="login-box-msg"></p>
 
-            .position-ref {
-                position: relative;
-            }
+                <form  method="post" action="{{ route('register') }}">
+                {{ csrf_field() }}
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+                  <div class="form-group has-feedback{{ $errors->has('name') ? ' has-error' : '' }}">
+                    <input type="text" class="form-control" placeholder="Full name" name="name">
+                    <span class="fa fa-user form-control-feedback"></span>
+                    @if ($errors->has('name'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('name') }}</strong>
+                        </span>
+                    @endif
+                  </div>
+                  <div class="form-group has-feedback{{ $errors->has('email') ? ' has-error' : '' }}">
+                    <input type="email" class="form-control" placeholder="Email" name="email">
+                    <span class="fa fa-envelope form-control-feedback"></span>
+                    @if ($errors->has('email'))
+                       <span class="help-block">
+                           <strong>{{ $errors->first('email') }}</strong>
+                       </span>
+                   @endif
+                  </div>
+                  <div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
+                    <input type="password" class="form-control" placeholder="Password" name="password">
+                    <span class="fa fa-lock form-control-feedback"></span>
+                    @if ($errors->has('password'))
+                       <span class="help-block">
+                           <strong>{{ $errors->first('password') }}</strong>
+                       </span>
+                   @endif
+                  </div>
+                  <div class="form-group has-feedback">
+                    <input type="password" class="form-control" placeholder="Retype password" name="password_confirmation">
+                    <span class="fa fa-lock form-control-feedback"></span>
+                   
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-8">
+                      <div class="checkbox icheck">
+                        <label>
+                          <input type="checkbox"> I agree to the <a href="#">terms</a>
+                        </label>
+                      </div>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-xs-4">
+                      <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
+                    </div>
+                    <!-- /.col -->
+                  </div>
+                </form>
 
-            .content {
-                text-align: center;
-            }
 
-            .title {
-                font-size: 84px;
-            }
+                <br>
+                <a href="/login" class="text-center">I already have account</a>
+              </div>
+              <!-- /.form-box -->
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
+             
+            </div>        
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
 
-            <div class="content">
-                <div class="title m-b-md">
-                    POLICE CLEARANCE LTB
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
         </div>
-    </body>
-</html>
+
+    </div>
+</div>
+
+
+@stop
