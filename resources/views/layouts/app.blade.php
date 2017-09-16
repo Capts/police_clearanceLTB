@@ -4,11 +4,7 @@
     @include('partials.head')
 </head>
 <body class="hold-transition skin-blue sidebar-mini" style="background-color: #4d8ba8;">
-    <!-- modals -->
     
-    @include('modals.newOrRenew')
-
-    <!-- / modals -->
     <div id="app">
         @include('partials.nav')
 
