@@ -7,6 +7,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
+use App\Role;
+use App\Profile;
+
 class RegisterController extends Controller
 {
     /*
@@ -48,7 +51,8 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
+            'firstname' => 'required|string|max:50',
+            'lastname' => 'required|string|max:50',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
@@ -62,10 +66,48 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
+
+        
+        $first = $data['firstname'];
+        $last = $data['lastname'];
+        $slug = $first . '-' . $last;
+        $avatar = 'public/defaults/avatars/user_icon.png';
+
+
+
+        $user = User::create([
+            'firstname' => $data['firstname'],
+            'lastname' => $data['lastname'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'slug' => $slug,
+            'avatar' => $avatar
         ]);
+
+        $this->assignRole($user)->createprofile($user);
+        return $user;
     }
+
+    protected function assignRole($user){
+        
+        $user->roles()->attach(Role::where('name', 'applicant')->first());
+
+        return $this;
+    }
+
+    protected function createprofile($user){
+
+        $profile = new Profile();
+        $profile->user_id = $user->id;
+        // $profile->age = null;
+        // $profile->bio = '';
+        // $profile->bday ='';
+        // $profile->civil_status = '';
+
+        $user->profile()->save($profile);
+
+        return $this;
+    }
+
+
 }
