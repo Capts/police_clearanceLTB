@@ -29,5 +29,6 @@
     
    
 </script>
+@yield('login_register_scripts')
 </body>
 </html>
