@@ -18,33 +18,85 @@
                 @endauth
             </div> --}}
                 
-                <div class="col-md-4">
-                   <div class="box box-default">
-                      <div class="box-body">
-                        
-                      </div>
-                      <div class="box-footer">
-                        
-                      </div>
-                   </div>
-                </div>
-                <div class="col-md-4">
-                   <div class="box box-default">
-                      <div class="box-body">
-                        
-                      </div>
-                      <div class="box-footer">
-                        
-                      </div>
-                   </div>
-                </div>
+                
                 @auth
-                    
+
+                <div class="col-md-4 col-md-offset-2" style="padding-top: 30px;">
+                   <div class="box box-info">
+                      <div class="box-body">
+                        <div class="callout callout-default">
+                            <p class="lead " style="font-size: 15px;padding:10px">
+                              First time applicants will fill up all necessary fields to save their details.
+                              This process automize the renewal process.
+                            </p>
+                        </div>
+                      
+                           <p class="text-center" style="font-size: 60px;color:silver"><span class="fa fa-file"></span></p>
+                       
+                        <button class="btn btn-flat bg-olive btn-block btn-lg">Apply for clearance</button>
+                      </div>
+                   </div>
+                </div>
+                <div class="col-md-4" style="padding-top: 30px;">
+                   <div class="box box-info">
+                        <div class="box-body">
+                            <div class="callout callout-default">
+                              <p class="lead " style="font-size: 15px;padding:10px">
+                                Renewing your clearance will be as easy as 1-2-3.
+                                Just take a picture and let the system find you.
+                                No more typing!
+                              </p>
+                          </div>
+                      
+                      
+                        <p class="text-center" style="font-size: 60px;color:silver;"><span class="fa fa-fax"></span></p>
+                        <button class="btn btn-flat bg-olive btn-block btn-lg">Renew clearance</button>
+
+                      </div>
+                   </div>
+                </div>
                    
 
                 @else
-                  
+                <div class="col-md-4" style="padding-top: 30px;">
+                   
+                   <div class="box box-info">
+                      <div class="box-body">
+                        <div class="callout callout-default">
+                          <p class="lead " style="font-size: 15px;padding:10px">
+                            First time applicants will fill up all necessary fields to save their details.
+                            This process automize the renewal process.
+                          </p>
+                        </div>
+                        
+                      
+                           <p class="text-center" style="font-size: 60px;color:silver"><span class="fa fa-file"></span></p>
+                       
+                        <button class="btn btn-flat bg-olive btn-block btn-lg">Apply for clearance</button>
+                      </div>
+                   </div>
 
+                </div>
+                <div class="col-md-4" style="padding-top: 30px;">
+                   <div class="box box-info">
+                        <div class="box-body">
+                        <div class="callout callout-default">
+                          <p class="lead " style="font-size: 15px;padding:10px">
+                            Renewing your clearance will be as easy as 1-2-3.
+                            Just take a picture and let the system find you.
+                            No more typing!
+                          </p>
+                        </div>
+                       
+                      
+                      
+                        <p class="text-center" style="font-size: 60px;color:silver;"><span class="fa fa-fax"></span></p>
+                        <button class="btn btn-flat bg-olive btn-block btn-lg">Renew clearance</button>
+
+                      </div>
+                   </div>
+                </div>
+    
 
                   <div class="col-md-4">
                                
@@ -164,8 +216,8 @@
 
                        </div>
                        <!-- /.login-box-body -->
-                     </div>
-                     <!-- /.login-box -->      
+                    </div>
+                    <!-- /.login-box -->      
 
 
                   </div>
