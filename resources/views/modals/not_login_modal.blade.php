@@ -10,9 +10,10 @@
         </button>
       </div> --}}
       <div class="modal-body">
-        <div class="callout callout-danger">
-          <h4>Ooops! We detected that you dont have an account yet. <br><br>Login or Register for one.</h4>
-        </div>
+        <div class='box-primary'>
+
+          <h4> <i class="fa fa-exclamation" style="color:red;font-weight: 120em;"></i> Ooops! We detected that you dont have an account yet. <br><br>Login or Register for one.</h4>
+        </section>
 
        @include('auth.login_mod')
        @include('auth.register_mod')

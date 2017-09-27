@@ -1,68 +1,43 @@
-<div class="navbar navbar-custom navbar-static-top">
+<div class="navbar navbar-custom navbar-static-top ">
   <div class="container">
-    <div class="navbar-header">
+    <div class="navbar-header" >
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      
-      <a class="navbar-brand" href="/" >Police clearance</a>
-    </div>
-    
-        {{-- expr --}}
-    <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-       {{--  <li class="active"><a href="#">Home</a></li>
-        <li class="active"><a href="#">About Us</a></li>
-        <li class="active"><a href="#">Services</a></li>
+     
+ 
+        <a class="navbar-brand hidden-xs " style="height: 100px;" href="/" >
+         
+          <img src="/img/baguio_logo.png" height="70px" width="70px" alt="" class="pull-left">
+          
+          <span style="margin-left: 10px;"> Police Clearance Online Application</span><br>
+          <span style="margin-left: 10px;margin-top:52px;"> <small>Baguio-Benguet</small></span>
+        </a>
         
-        <li><a href="#contact">Contact</a></li> --}}
-      </ul>
-        @if (Auth::check())
-            <ul class="nav navbar-nav navbar-right">
-                <!-- User Account: style can be found in dropdown.less -->
-                <li class="dropdown user user-menu">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <img src="{{ Storage::url(auth()->user()->avatar) }}" class="user-image" alt="User Image">
-                    <span class="hidden-xs">{{ ucfirst(auth()->user()->firstname). ' '  .ucfirst(auth()->user()->lastname)  }}</span>
-                  </a>
-                  <ul class="dropdown-menu" style="background-color: #4d8ba8;">
-                    <!-- User image -->
-                    <li class="user-header">
-                      <img src="{{ Storage::url(auth()->user()->avatar) }}" class="img-circle" alt="User Image">
 
-                      <p>
-                        {{ auth()->user()->name }}
-                        <small>Member since {{ date('M j,Y', strtotime(Auth::getUser()->created_at)) }}</small>
-                      </p>
-                    </li>
-                    <!-- Menu Footer-->
-                    <li class="user-footer">
-                      <div class="text-center">
-                        <a class="btn btn-danger btn-block btn-flat " href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                     document.getElementById('logout-form').submit();">
-                           Logout
-                        </a>
+        <a class="navbar-brand visible-xs " style="height: 100px;" href="/" >
+       
+          <img src="/img/baguio_logo.png" height="50px" width="50px" alt="" class="pull-left">
+         
+          <span style="margin-left: 10px;">Online Application</span><br>
+          <span style="margin-left: 10px;margin-top:52px;"> <small>Baguio-Benguet</small></span>
+          
+        </a>
 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            {{ csrf_field() }}
-                        </form>
-                      </div>
-                    </li>
-                  </ul>
-                </li>
-            </ul>
-        @else
-            <ul class="nav navbar-nav navbar-right">
-                {{-- <li><a href="/register">Register</a></li>
-                <li><a href="/login">Login</a></li> --}}
-            </ul>
-            
-            
-        @endif
-    </div><!--/.nav-collapse -->
+    </div>
+
+  <div class="collapse navbar-collapse">
+    <div class="nav navbar-nav navbar-right" style="margin-top: 15px;width:250px;">
+      <img src="/img/pnp_logo.png" height="70px" width="60px" alt="" class="pull-right">
+      <span>Police Hotline numbers</span><br>
+      <span>Globe: 9128401091</span><br>
+      <span>Smart: 9128401001</span><br>
+    </div>
+  </div>
+    
+
     
   </div>
 </div>

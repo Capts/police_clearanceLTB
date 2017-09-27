@@ -14,5 +14,9 @@
 <link href="{{ asset('dist/css/skins/_all-skins.min.css') }}" rel="stylesheet">
 <link href="{{ asset('plugins/iCheck/square/blue.css') }}" rel="stylesheet">
 
+<link rel="stylesheet" href="css/steps.css">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/footer.css">
+
+
 

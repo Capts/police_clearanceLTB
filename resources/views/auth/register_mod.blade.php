@@ -75,7 +75,7 @@
 
 
                        <br>
-                       <a href="#" id="show_login" class="btn bg-olive btn-flat btn-block">I already have an account. Log me in</a>
+                       <a id="show_login" class="btn bg-olive btn-flat btn-block">I already have an account. Log me in</a>
                      </div>
                      <!-- /.form-box -->
                    </div>  

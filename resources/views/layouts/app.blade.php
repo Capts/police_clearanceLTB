@@ -3,18 +3,20 @@
 <head>
     @include('partials.head')
 </head>
-<body class="hold-transition skin-blue sidebar-mini" style="background-color: #4d8ba8;">
+<body style="background-color: #4d8ba8;height: auto;padding-bottom: 0px;">
     
     <div id="app">
         @include('partials.nav')
-
-        @yield('content')
+        
+        @yield('content') 
     </div>
+    @include('partials.footer')
 
     <!-- Scripts -->
     <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('plugins/iCheck/icheck.min.js') }}"></script>
+    <link href="{{ asset('js/steps.js') }}" rel="stylesheet">
 
     <script>
       $(function () {
@@ -26,9 +28,8 @@
       });
     </script>
 
-    
-   
-</script>
-@yield('login_register_scripts')
+
+
+
 </body>
 </html>
