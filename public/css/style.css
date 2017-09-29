@@ -2,11 +2,16 @@
 	border:2px solid red;
 }
 
-.navstyle{
-  height: 100px;
+
+.navbar1 {
+    position: relative;
 }
-
-
+.brand {
+    position: absolute;
+    left: 50%;
+    margin-left: -50px !important;  /* 50% of your logo width */
+    display: block;
+}
 /* fonts */
 
 

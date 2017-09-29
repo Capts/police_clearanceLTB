@@ -6,40 +6,27 @@
 @section('content')
 
 
-@include('modals.modal_new_applicant')
-@include('modals.modal_renew_clearance')
+<div class="row" style="margin:30px auto;">
 
+  <div class="col-md-5 col-md-offset-1">
+    <div class="well" style="margin-top:40px;height: 520px;background-color: transparent;">
+      some info here
+    </div>
+    
+  </div>
 
-
-<div class="row">
   
-  <div class="col-md-6 col-md-offset-3">
-        <div class="box box-info">
-          <div class="box-body">
-              <button class="btn btn-flat bg-olive" type="button" data-toggle="modal" data-target="#new_applicant">New Applicant</button>
+
+ 
 
 
-          </div>
-        </div>
-
-  </div>
-    
-
-</div>
-
-
-<div class="row">
-
-  <div class="col-md-6 col-md-offset-3">
-   <div class="box box-info">
-     <div class="box-body">
-        <button class="btn btn-flat bg-olive" type="button" data-toggle="modal" data-target="#renew_clearance">Renew Clearance</button>
-
-
-     </div>
-   </div>
+  <div class="col-md-4 col-md-offset-2" style="padding-top: 0;">
+  
+    @include('auth.register_mod')
     
   </div>
+
+
 
 </div>
 
