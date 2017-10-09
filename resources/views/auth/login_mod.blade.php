@@ -1,9 +1,4 @@
-<div class="login-box" style="display: none;">
-   <div class="login-logo">
-     {{-- <a href="/"><b>Admin</b>LTE</a> --}}
-   </div>
-   <!-- /.login-logo -->
-   <div class="login-box-body">
+
      <p class="login-box-msg">Sign in to your account</p>
 
      <form action="{{ route('login') }}" method="post">
@@ -21,7 +16,7 @@
        </div>
        <div class="form-group has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
          <input type="password" class="form-control" placeholder="Password" name="password">
-         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+         <span class="fa fa-lock form-control-feedback"></span>
            @if ($errors->has('password'))
                <span class="help-block">
                    <strong>{{ $errors->first('password') }}</strong>
@@ -44,9 +39,4 @@
          <!-- /.col -->
        </div>
      </form>
-      <br>
-     <a href="#" class=" btn btn-primary btn-flat btn-block" id="show_register">I don't have account yet. Sign up me up.</a>
-
-   </div>
-   <!-- /.login-box-body -->
-</div>
+      

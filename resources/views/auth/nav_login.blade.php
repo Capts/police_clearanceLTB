@@ -2,7 +2,7 @@
   <div class="col-md-12" style="padding:28px 0px">
     
 
-  <form class="form-inline" method="POST" action="{{ route('login') }}">
+  <form class="navbar-form form-inline pull-right" method="POST" action="{{ route('login') }}">
     {{ csrf_field() }}
 
     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">

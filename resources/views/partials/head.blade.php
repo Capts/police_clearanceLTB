@@ -13,10 +13,16 @@
 <link href="{{ asset('dist/css/AdminLTE.min.css') }}" rel="stylesheet">
 <link href="{{ asset('dist/css/skins/_all-skins.min.css') }}" rel="stylesheet">
 <link href="{{ asset('plugins/iCheck/square/blue.css') }}" rel="stylesheet">
+<link href="{{ asset('css/animate.css') }}" rel="stylesheet">
+<link href="{{ asset('css/navLogin.css') }}" rel="stylesheet">
 
 <link rel="stylesheet" href="css/steps.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/footer.css">
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
 
 

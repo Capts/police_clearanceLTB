@@ -13,7 +13,7 @@
       @else
         {{-- @include('partials.loggedin.main_nav') --}}
       @endguest
-        
+        @include('partials.header')
         
         @yield('content') 
     </div>

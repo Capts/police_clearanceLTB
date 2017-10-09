@@ -1,9 +1,7 @@
- <div class="register-box" style="padding-top: 0px;">
 
-   <div class="register-box-body">
      <p class="login-box-msg">Sign up for an account!</p>
 
-     <form  method="post" action="{{ route('register') }}">
+     <form  method="post" action="{{ route('register') }}" class="ajax-register-form">
      {{ csrf_field() }}
 
        <div class="form-group has-feedback{{ $errors->has('firstname') ? ' has-error' : '' }}">
@@ -76,6 +74,4 @@
 
      {{-- <br> --}}
      {{-- <a id="show_login" class="btn bg-olive btn-flat btn-block">I already have an account. Log me in</a> --}}
-   </div>
-   <!-- /.form-box -->
- </div>  
+  

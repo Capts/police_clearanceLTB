@@ -2,6 +2,25 @@
 	border:2px solid red;
 }
 
+#picture{
+  position: relative;
+  margin: 20px auto 0;
+  width: 150px;
+  height: 150px;
+}
+.thumbnailImage{
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+#button1 {
+  z-index: 1;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
 
 .navbar1 {
     position: relative;

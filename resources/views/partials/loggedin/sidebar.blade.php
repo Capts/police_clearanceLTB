@@ -2,7 +2,21 @@
   <!-- sidebar: style can be found in sidebar.less -->
   <section class="sidebar">
     <!-- Sidebar user panel -->
+    
     <div class="user-panel">
+      <div class=" text-center">
+        {{-- <p class="text-center" style="margin-top: 10px;"> --}}
+          
+          <img src="/img/baguio_logo.png" alt="" style="height: 100px;width: 100px;">
+        {{-- </p> --}}
+      </div>
+      <div class="text-center">
+        Police Clearance <br> Online Application <br>
+        <small>Baguio City, Benguet, PH</small> <br>
+        <small class="text-green  "><i class="fa fa-clock-o ">&nbsp;</i>open from 6AM-6PM</small>
+      </div>
+    </div>
+   {{--  <div class="user-panel">
       <div class="pull-left image">
         <img src="{{ Storage::url(Auth::user()->avatar)}}" class="img-circle" alt="User Image">
       </div>
@@ -10,7 +24,7 @@
         <p>{{ ucfirst(auth()->user()->firstname) .  ' ' . ucfirst(auth()->user()->lastname) }}</p>
         <div class="text-aqua">{{ auth()->user()->email }}</div>
       </div>
-    </div>
+    </div> --}}
    
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
@@ -31,7 +45,7 @@
           <a href="{{ route('logout') }}"
               onclick="event.preventDefault();
                        document.getElementById('logout-form').submit();">
-              <i class="fa fa-power-off"></i> &nbsp;Logout
+              <i class="fa fa-power-off"></i> &nbsp;<span>Logout</span>
           </a>
 
           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -40,10 +54,6 @@
 
       </li>
 
-       <li>
-         <a href="#" class="text-green"><i class="fa fa-clock-o"></i><span>Open from 6:00AM to 6:00PM</span></a>
-        
-      </li>
       
     </ul>
   </section>

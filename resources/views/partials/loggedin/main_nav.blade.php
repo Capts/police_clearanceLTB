@@ -6,9 +6,9 @@
   <!-- Logo -->
   <a href="/home" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
-    <span class="logo-mini"><b>LTB</b></span>
+    <span class="logo-mini"><b>BC</b></span>
     <!-- logo for regular state and mobile devices -->
-    <span class="logo-lg"><b>Police Clearance</b></span>
+    <span class="logo-lg"><b>Welcome</b></span>
   </a>
   <!-- Header Navbar: style can be found in header.less -->
 
@@ -24,9 +24,9 @@
     </a>
 
 
-  <a href="/" class="brand">
+ {{--  <a href="/" class="brand">
   	<img src="/img/baguio_logo.png" height="90px" width="90px" alt="logo">
-  </a>
+  </a> --}}
     
 
     <div class="navbar-custom-menu">
