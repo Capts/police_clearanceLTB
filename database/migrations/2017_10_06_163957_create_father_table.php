@@ -16,10 +16,10 @@ class CreateFatherTable extends Migration
         Schema::create('fathers', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->string('first_name');
-            $table->string('middle_name');
-            $table->string('last_name');
-            $table->string('extension_name');
+            $table->string('f_first_name')->nullable();
+            $table->string('f_middle_name')->nullable();
+            $table->string('f_last_name')->nullable();
+            $table->string('f_extension_name')->nullable();
             $table->timestamps();
         });
     }

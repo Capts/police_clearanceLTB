@@ -8,8 +8,15 @@ Route::group(['middleware' => 'guest'], function(){
 });
 
 
+//dash route
+Route::get('/dashboard', 'DashboardController@dashboard')->name('dashboard')->middleware('auth');
+
+	   
 
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home/{id}/{slug}', 'HomeController@index')->name('home');
+
+Route::post('/applications/{id}/edit', 'ApplicationController@upload_image')->name('upload_image');
+Route::resource('/applications', 'ApplicationController');

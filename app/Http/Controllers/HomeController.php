@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+
+
+use App\User;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -14,10 +17,13 @@ class HomeController extends Controller
     }
 
    
-    public function index()
+    public function index($id)
     {
-    	$todate = Carbon::now();
+    	$user = User::where('id', $id)->first();
 
-        return view('home', compact('todate'));
+    	// dd($profile);
+
+    	return view('home', [$user->id,$user->slug], compact('profile'));
+        
     }
 }

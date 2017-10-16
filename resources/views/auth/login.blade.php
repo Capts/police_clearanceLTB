@@ -1,9 +1,14 @@
 @extends('layouts.app')
-
+@section('title', 'Login to continue')
 @section('content')
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+            <div class="callout callout-danger">
+                <div class="callout-body">
+                    <span><i class="fa fa-exclamation fa-3x">&nbsp;</i></span>Oh snap! you need to login to continue
+                </div>
+            </div>
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
 
@@ -62,6 +67,7 @@
                         </div>
                     </form>
                 </div>
+                <br><br><br>
             </div>
         </div>
     </div>

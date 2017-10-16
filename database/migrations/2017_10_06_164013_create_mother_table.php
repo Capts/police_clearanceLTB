@@ -16,9 +16,9 @@ class CreateMotherTable extends Migration
         Schema::create('mothers', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->string('first_name');
-            $table->string('middle_name');
-            $table->string('last_name');
+            $table->string('m_first_name')->nullable();
+            $table->string('m_middle_name')->nullable();
+            $table->string('m_last_name')->nullable();
             $table->timestamps();
         });
     }

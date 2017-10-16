@@ -19,6 +19,7 @@ class CreateProfilesTable extends Migration
             $table->string('middle_name')->nullable();
             $table->string('extension_name')->nullable();
             $table->integer('age')->nullable();
+            $table->string('gender')->nullable();
             $table->string('present_add')->nullable();
             $table->string('provincial_add')->nullable();
             $table->string('dob')->nullable();

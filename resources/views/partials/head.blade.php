@@ -15,14 +15,14 @@
 <link href="{{ asset('plugins/iCheck/square/blue.css') }}" rel="stylesheet">
 <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
 <link href="{{ asset('css/navLogin.css') }}" rel="stylesheet">
-
-<link rel="stylesheet" href="css/steps.css">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/footer.css">
+<link href="{{ asset('css/style.css') }}" rel="stylesheet">
+<link href="{{ asset('css/footer.css') }}" rel="stylesheet">
+<link href="{{ asset('css/bootstrap-tokenfield.min.css') }}" rel="stylesheet">
 
 
 
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
 
 

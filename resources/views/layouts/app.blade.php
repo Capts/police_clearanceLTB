@@ -10,10 +10,11 @@
 
       @guest
         @include('partials.nav')
+        @include('partials.header')
       @else
         {{-- @include('partials.loggedin.main_nav') --}}
       @endguest
-        @include('partials.header')
+        
         
         @yield('content') 
     </div>
@@ -26,8 +27,7 @@
     <script src="{{ asset('plugins/iCheck/icheck.min.js') }}"></script>
     <script src="{{ asset('bower_components/fastclick/lib/fastclick.js') }}"></script>
     <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
-    <link href="{{ asset('js/steps.js') }}" rel="stylesheet">
-
+    <script src="{{ asset('js/bootstrap-tokenfield.min.js') }}"></script>
     <script>
       $(function () {
         $('input').iCheck({
@@ -36,8 +36,17 @@
           increaseArea: '20%' // optional
         });
       });
-    </script>
 
+      $('#tokenfield').tokenfield({
+        autocomplete: {
+          source: ['red','blue','green','yellow','violet','brown','purple','black','white'],
+          delay: 100
+        },
+        showAutocompleteOnFocus: true
+      })
+
+    </script>
+   
 
 
 

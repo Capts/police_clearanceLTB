@@ -29,9 +29,19 @@
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
       <li class="header">NAVIGATION</li>
+      <li>
+        <a href="{{ route('dashboard') }}"><i class="fa fa-home"></i> <span>Home</span></a>
+      </li>
+      <li class="treeview">
 
-      <li><a href="#"><i class="fa fa-book"></i> <span>Application</span></a></li>
-      <li><a href="#"><i class="fa fa-server"></i> <span>Transactions</span></a></li>
+        <a href="#"><i class="fa fa-book"></i> <span>Application</span></a>
+        <ul class="treeview-menu">
+          <li><a href="{{ route('applications.edit', auth()->user()->id) }}"><i class="fa fa-file"></i> Apply for clearance</a></li>
+          <li><a href="#"><i class="fa fa-server"></i> <span>Transactions</span></a></li>
+          
+        </ul>
+      </li>
+      
       {{-- <li class="treeview"> --}}
       
       
@@ -39,8 +49,7 @@
       <li class="header">SETTINGS</li>
       <li><a href="#"><i class="fa fa-pencil"></i> <span>Edit information</span></a></li>
       <li><a href="#"><i class="fa fa-cog"></i> <span>Change password</span></a></li>
-      
-      <li class="header">SYSTEM</li>
+     
       <li>
           <a href="{{ route('logout') }}"
               onclick="event.preventDefault();

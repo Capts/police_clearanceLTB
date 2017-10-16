@@ -34,7 +34,7 @@
          </div> --}}
          <!-- /.col -->
          <div class="col-md-12">
-           <button type="submit" class="btn bg-olive btn-block btn-flat">Sign In</button>
+           <button type="submit" class="btn bg-olive btn-block btn-flat">Sign me in</button>
          </div>
          <!-- /.col -->
        </div>

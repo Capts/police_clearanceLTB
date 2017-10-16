@@ -21,6 +21,29 @@ class User extends Authenticatable
         ->hasOne('App\Profile');
     }
 
+    public function mother(){
+        return $this
+        ->hasOne('App\Mother');
+    }
+
+    public function father(){
+        return $this
+        ->hasOne('App\Father');
+    }
+
+    public function contact(){
+        return $this
+        ->hasOne('App\Contact');
+    }
+    public function other(){
+        return $this
+        ->hasOne('App\Other');
+    }
+
+    public function applied(){
+        return $this->hasMany('App\Applied');
+    }
+
 
 
 
