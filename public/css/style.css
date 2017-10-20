@@ -86,9 +86,15 @@
   }
   #content-margin-top{
   margin-top: 0;
-}
+  }
 
 }
+
+/*@media screen and (min-width: 780px) {
+    section #user_row{
+        width: 200px;
+    }
+}*/
 
 #body_ng_user{
   /*margin-top: 60px;*/

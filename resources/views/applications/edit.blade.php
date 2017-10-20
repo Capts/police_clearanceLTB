@@ -11,7 +11,7 @@
   <div class="content-wrapper" id="content-margin-top">
   	<div class="row">
 
-	  	<div class="col-md-10 col-md-offset-1">
+	  	<div class="col-md-12 col-lg-8 col-lg-offset-2 ">
 			
 			@if (Session::has('success'))
 				<br>
@@ -31,15 +31,26 @@
 	  				<div class="box box-primary">
 	  					<div class="box-header with-border">
 	  						@if (is_null($profile->middle_name))
-	  							<p class="lead text-center">{{ ucfirst(auth()->user()->firstname) . ' ' . ucfirst(auth()->user()->lastname) }}
+	  							<p class="lead text-center">
+		  							@if (auth()->user()->avatar == 'public/default/avatars/default.jpg')
+							           <img src="/default/avatars/default.jpg" class="img-circle" height="50px" width="50px">
+							        @else
+							           <img src="/upload/avatars/{{auth()->user()->avatar}}" class="img-circle" height="50px" width="50px">
+							        @endif
+	  								{{ ucfirst(auth()->user()->firstname) . ' ' . ucfirst(auth()->user()->lastname) }}
 	  							</p>
-
 	  						@else
-	  							<p class="lead text-center">{{ ucfirst(auth()->user()->firstname) . ' ' . ucfirst(auth()->user()->profile->middle_name[0]) . '. '. ucfirst(auth()->user()->lastname) }}
+	  							<p class="lead text-center">
+		  							@if (auth()->user()->avatar == 'public/default/avatars/default.jpg')
+							           <img src="/default/avatars/default.jpg" class="img-circle" height="50px" width="50px">
+							        @else
+							           <img src="/upload/avatars/{{auth()->user()->avatar}}" class="img-circle" height="50px" width="50px">
+							        @endif
+	  								{{ ucfirst(auth()->user()->firstname) . ' ' . ucfirst(auth()->user()->profile->middle_name[0]) . '. '. ucfirst(auth()->user()->lastname) }}
 	  							</p>
 	  						@endif
 	  						
-	  						
+  							
 	  					</div>
 	  					<div class="box-body">
 	  						{!! Form::model($profile, ['route' => ['applications.update', $profile->id], 'method' => 'PUT']) !!}

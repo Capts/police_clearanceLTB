@@ -33,9 +33,10 @@
         </section>
       </section>
       
-      <section id="body_ng_user">
-        <div class="row" style="margin:10px 10px;border-radius: 0px;background-color: #f9f9f9;">
-          <div class="col-md-6">
+     <div class="row">
+      <section id="body_ng_user" class="col-md-12 col-lg-8 col-lg-offset-2 col-sm-12">
+        <div  class="row" style="margin:10px 10px;border-radius: 0px;background-color: #f9f9f9;" >
+          <div class="col-md-6" id="user_row">
             
             <div class="col-md-12">
               <fieldset>
@@ -231,7 +232,7 @@
             </div>
 
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6" id="user_row">
             <div class="col-md-12">
               <fieldset>
                 <legend>
@@ -310,14 +311,11 @@
                 <div class="col-md-12">
                   @if (is_null(auth()->user()->other->passport))
                   @else
-                      <section class="col-md-4">
-                       Passport no
+                      <section class="col-md-6">
+                       <p><b>Cedula no:</b> &nbsp; <kbd>{{ auth()->user()->other->passport }}</kbd></p>
                       </section>
-                      <section class="col-md-4">
-                       {{ auth()->user()->other->passport }}
-                      </section>
-                     <section class="col-md-4">
-                    {{ auth()->user()->other->passport_day }}/{{ auth()->user()->other->passport_month }}/{{ auth()->user()->other->passport_year }}
+                     <section class="col-md-6">
+                    <p><b>Date issued:</b> &nbsp; <kbd>{{ auth()->user()->other->passport_day }}/{{ auth()->user()->other->passport_month }}/{{ auth()->user()->other->passport_year }}</kbd></p>
                     </section>
                   @endif
                 </div>
@@ -326,7 +324,7 @@
           </div>
         </div>
       </section>
-
+    </div> 
    
  
       
