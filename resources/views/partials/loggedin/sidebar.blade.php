@@ -30,13 +30,13 @@
     <ul class="sidebar-menu" data-widget="tree">
       <li class="header">NAVIGATION</li>
       <li>
-        <a href="{{ route('dashboard') }}"><i class="fa fa-home"></i> <span>Home</span></a>
+        <a href="{{ route('dashboard') }}"><i class="fa fa-arrow-right"></i> <span>Dashboard</span></a>
       </li>
       <li class="treeview">
 
         <a href="#"><i class="fa fa-book"></i> <span>Application</span></a>
         <ul class="treeview-menu">
-          <li><a href="{{ route('applications.edit', auth()->user()->id) }}"><i class="fa fa-file"></i> Apply for clearance</a></li>
+          <li><a href="{{ route('application.create')}}"><i class="fa fa-file"></i> Apply for clearance</a></li>
           <li><a href="#"><i class="fa fa-server"></i> <span>Transactions</span></a></li>
           
         </ul>
@@ -47,7 +47,7 @@
       
       
       <li class="header">SETTINGS</li>
-      <li><a href="#"><i class="fa fa-pencil"></i> <span>Edit information</span></a></li>
+      <li><a href="{{ route('applicant.edit', auth()->user()->id) }}"><i class="fa fa-pencil"></i> <span>Edit information</span></a></li>
       <li><a href="#"><i class="fa fa-cog"></i> <span>Change password</span></a></li>
      
       <li>

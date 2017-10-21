@@ -11,12 +11,12 @@ Route::group(['middleware' => 'guest'], function(){
 //dash route
 Route::get('/dashboard', 'DashboardController@dashboard')->name('dashboard')->middleware('auth');
 
-	   
 
 
 Auth::routes();
 
 // Route::get('/home/{id}/{slug}', 'HomeController@index')->name('home');
 
-Route::post('/applications/{id}/edit', 'ApplicationController@upload_image')->name('upload_image');
-Route::resource('/applications', 'ApplicationController');
+Route::post('/applicant/{id}/edit', 'ApplicantController@upload_image')->name('upload_image');
+Route::resource('/applicant', 'ApplicantController');
+Route::resource('/application', 'ApplicationController');

@@ -14,7 +14,7 @@
   <div class="content-wrapper">
   
       <section  id="user_picture">
-        @include('applications.upload_modal')
+        @include('applicant.upload_modal')
         <section id="picture">
           <a href="#" data-toggle="modal" data-target="#upload"><i class="fa fa-camera fa-2x" data-toggle="tooltip" title="Change picture"></i></a>
           @if (auth()->user()->avatar == 'public/default/avatars/default.jpg')
@@ -28,12 +28,12 @@
 
         <p><b>{{ ucfirst(auth()->user()->firstname) . ' '. ucfirst(auth()->user()->profile->middle_name[0]). '. ' .ucfirst(auth()->user()->lastname) }}</b></p>
         
-        <section class="text-center">
+        {{-- <section class="text-center">
           <a href="{{ route('applications.edit', auth()->user()->id) }}" class="btn btn-flat btn-primary">Apply for clearance</a>
-        </section>
+        </section> --}}
       </section>
       
-     <div class="row">
+    <div class="row">
       <section id="body_ng_user" class="col-md-12 col-lg-8 col-lg-offset-2 col-sm-12">
         <div  class="row" style="margin:10px 10px;border-radius: 0px;background-color: #f9f9f9;" >
           <div class="col-md-6" id="user_row">
@@ -290,6 +290,7 @@
                    </section>
                   @endif
                 </div>
+
                 <div class="col-md-12">
                   @if (is_null(auth()->user()->other->cedula))
                     <section class="col-md-6">
@@ -304,18 +305,18 @@
                      <p><b>Cedula no:</b> &nbsp; <kbd>{{ auth()->user()->other->cedula }}</kbd></p>
                    </section>
                    <section class="col-md-6">
-                     <p><b>Date issued:</b> &nbsp; <kbd>{{ auth()->user()->other->cedula_day }}/{{ auth()->user()->other->cedula_month }}/{{ auth()->user()->other->cedula_year }}</kbd></p>
+                     <p><b>Date issued:</b> &nbsp; <kbd>{{ date('M j,Y', strtotime(auth()->user()->other->c_date_issued)) }}</kbd></p>
                    </section>
                   @endif
                 </div>
                 <div class="col-md-12">
-                  @if (is_null(auth()->user()->other->passport))
+                  @if (is_null(auth()->user()->other->passport) OR auth()->user()->other->passport == '')
                   @else
                       <section class="col-md-6">
-                       <p><b>Cedula no:</b> &nbsp; <kbd>{{ auth()->user()->other->passport }}</kbd></p>
+                       <p><b>Passport no:</b> &nbsp;<br> <kbd>{{ auth()->user()->other->passport }}</kbd></p>
                       </section>
                      <section class="col-md-6">
-                    <p><b>Date issued:</b> &nbsp; <kbd>{{ auth()->user()->other->passport_day }}/{{ auth()->user()->other->passport_month }}/{{ auth()->user()->other->passport_year }}</kbd></p>
+                    <p><b>Date issued:</b> &nbsp;<br> <kbd>{{ date('M j,Y', strtotime(auth()->user()->other->p_date_issued)) }}</kbd></p>
                     </section>
                   @endif
                 </div>
@@ -326,14 +327,11 @@
       </section>
     </div> 
    
- 
-      
+   
 
   </div>
   
 
 
-
 </div>
-
 @endsection

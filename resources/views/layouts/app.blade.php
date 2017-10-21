@@ -7,7 +7,7 @@
 <body class="hold-transition skin-blue sidebar-mini" style="height: auto;padding-bottom: 0px;background-color: #4d8ba8;">
     
     <div id="app">
-
+    
       @guest
         @include('partials.nav')
         @include('partials.header')
@@ -17,17 +17,22 @@
         
         
         @yield('content') 
+        
     </div>
     @include('partials.footer')
 
+
     <!-- Scripts -->
-    <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
+
+    <script src="{{ asset('js/parsley.min.js') }}"></script>
     <script src="{{ asset('bower_components/jquery-slimscroll/jquery.slimscroll.min.js') }}"></script>
     <script src="{{ asset('plugins/iCheck/icheck.min.js') }}"></script>
     <script src="{{ asset('bower_components/fastclick/lib/fastclick.js') }}"></script>
     <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap-tokenfield.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.datetimepicker.full.js') }}"></script>
+    <script src="{{ asset('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
+
     <script>
       $(function () {
         $('input').iCheck({
@@ -36,17 +41,26 @@
           increaseArea: '20%' // optional
         });
       });
+      
 
       $('#tokenfield').tokenfield({
-        autocomplete: {
-          source: ['red','blue','green','yellow','violet','brown','purple','black','white'],
-          delay: 100
-        },
         showAutocompleteOnFocus: true
-      })
+      });
+
+     $('#datepicker').datepicker({
+      autoclose: true
+    });
+     $('#datepicker1').datepicker({
+      autoclose: true
+    });
+     $('#datepickerDOB').datepicker({
+      autoclose: true
+    });
+
 
     </script>
-   
+  
+
 
 
 

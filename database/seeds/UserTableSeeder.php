@@ -32,7 +32,7 @@ class UserTableSeeder extends Seeder
        $user_default_profile->gender = 'Male';
        $user_default_profile->present_add = 'New York';
        $user_default_profile->provincial_add = 'La Trinidad Benguet';
-       $user_default_profile->dob = '14/5/1984';
+       $user_default_profile->dob = now();
        $user_default_profile->pob = 'Newy york, New york';
        $user_default_profile->civil_status = 'married';
        $user_default_profile->citizenship = 'Jew';
@@ -67,13 +67,9 @@ class UserTableSeeder extends Seeder
        $user_default_other = new Other();
        $user_default_other->user_id = 1;
        $user_default_other->cedula = '12121212';
-       $user_default_other->cedula_day = 1;
-       $user_default_other->cedula_month = 11;
-       $user_default_other->cedula_year = 1999;
+       $user_default_other->c_date_issued = now();
        $user_default_other->passport = '12121212';
-       $user_default_other->passport_day = 1;
-       $user_default_other->passport_month = 11;
-       $user_default_other->passport_year = 2015;
+       $user_default_other->p_date_issued = now();
        $user_default_other->save();
     }
 }

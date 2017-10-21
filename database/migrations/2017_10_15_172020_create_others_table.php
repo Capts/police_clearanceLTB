@@ -17,13 +17,9 @@ class CreateOthersTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->string('cedula')->nullable();
-            $table->integer('cedula_day')->nullable();
-            $table->integer('cedula_month')->nullable();
-            $table->integer('cedula_year')->nullable();
+            $table->date('c_date_issued')->nullable();
             $table->string('passport')->nullable();
-            $table->integer('passport_day')->nullable();
-            $table->integer('passport_month')->nullable();
-            $table->integer('passport_year')->nullable();
+            $table->date('p_date_issued')->nullable();
             $table->timestamps();
         });
     }

@@ -22,7 +22,7 @@ class CreateProfilesTable extends Migration
             $table->string('gender')->nullable();
             $table->string('present_add')->nullable();
             $table->string('provincial_add')->nullable();
-            $table->string('dob')->nullable();
+            $table->date('dob')->nullable();
             $table->string('pob')->nullable();
             $table->string('civil_status')->nullable();
             $table->string('citizenship')->nullable();
