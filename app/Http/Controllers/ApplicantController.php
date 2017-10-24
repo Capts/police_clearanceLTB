@@ -35,6 +35,8 @@ class ApplicantController extends Controller
         }
         return redirect()->route('dashboard');
     }
+
+   
     
 
 
@@ -106,7 +108,7 @@ class ApplicantController extends Controller
         if (isset($profile)) {
             $profile->middle_name = $request->input('middle_name');
             if ($request->extension_name == '') {
-                $profile->extension_name = $request->input('null');
+                $profile->extension_name = null;
             }else{
                 $profile->extension_name = $request->input('extension_name');
             }
@@ -121,11 +123,8 @@ class ApplicantController extends Controller
             $profile->citizenship = $request->input('citizenship');
             $profile->height = $request->input('height');
             $profile->weight = $request->input('weight');
-            if ($request->visible_marks == '') {
-                $profile->visible_marks = 'none';
-            }else{
-                $profile->visible_marks = $request->input('visible_marks');
-            }
+            $profile->visible_marks = $request->input('visible_marks');
+           
             // $profile->purpose = $request->input('purpose');
             $profile->save();
         }
@@ -169,7 +168,7 @@ class ApplicantController extends Controller
 
         Session::flash('success', 'Your profile is now updated!');
 
-        return redirect()->route('applicant.edit', $profile->id);
+        return redirect()->route('applicant.edit', auth()->user()->id);
     }
 
    

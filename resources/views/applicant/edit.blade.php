@@ -28,7 +28,7 @@
 				<!-- Application form  -->
 					<!-- allicants info  -->
 	  				<div class="box box-primary">
-	  					<div class="box-header with-border">
+	  					<div class="box-header with-border bg-primary" style="color:white;">
 	  						@if (is_null($profile->middle_name))
 	  							<p class="lead text-center">
 		  							@if (auth()->user()->avatar == 'public/default/avatars/default.jpg')
@@ -52,7 +52,7 @@
   							
 	  					</div>
 	  					<div class="box-body" id="changeAllInput">
-	  						{!! Form::model($profile, ['route' => ['applicant.update', $profile->id], 'method' => 'PUT', 'data-parsley-validate' => '']) !!}
+	  						{!! Form::model($profile, ['route' => ['applicant.update', $profile->user_id], 'method' => 'PUT', 'data-parsley-validate' => '']) !!}
 
 	  							<div class="col-md-6">
 									<fieldset>

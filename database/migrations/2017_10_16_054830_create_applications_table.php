@@ -18,6 +18,7 @@ class CreateApplicationsTable extends Migration
             $table->integer('user_id');
             $table->string('control_no');
             $table->string('name');
+            $table->date('appointment_date');
             $table->string('purpose');
             $table->timestamps();
         });

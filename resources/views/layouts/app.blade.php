@@ -26,6 +26,7 @@
 
     <script src="{{ asset('js/parsley.min.js') }}"></script>
     <script src="{{ asset('bower_components/jquery-slimscroll/jquery.slimscroll.min.js') }}"></script>
+    
     <script src="{{ asset('plugins/iCheck/icheck.min.js') }}"></script>
     <script src="{{ asset('bower_components/fastclick/lib/fastclick.js') }}"></script>
     <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>

@@ -2,7 +2,7 @@
 <div class="modal fade" id="upload" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header bg-primary">
         <h5 class="modal-title text-center" id="exampleModalLabel"><i class="fa fa-upload pull-left fa-2x"></i>Upload image</span>
         <i class="fa fa-times pull-right" class="close" data-dismiss="modal" aria-label="Close"></i>
         </h5>
@@ -23,8 +23,8 @@
             <input type="file" name="avatar">
          
         </div>
-        <section class="modal-footer">
-           <button class="btn btn-flat bg-olive btn-block ">Upload now</button>
+        <section class="modal-footer text-center">
+           <button class="btn btn-flat btn-primary text-center btn-block" data-toggle="tooltip" title="Upload now"><i class="fa fa-upload fa-2x"></i></button>
          </section>
 
       </form>

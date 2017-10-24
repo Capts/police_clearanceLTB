@@ -10,7 +10,9 @@
 <!-- Styles -->
 <script src="{{ asset('js/app.js') }}"></script>
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<script src="{{ asset('js/jquery.thooClock.js') }}"></script>
 <link href="{{ asset('css/jquery.datetimepicker.min.css') }}" rel="stylesheet">
+{{-- <link href="{{ asset('css/clock.css') }}" rel="stylesheet"> --}}
 <link href="{{ asset('fontawesome/css/font-awesome.min.css') }}" rel="stylesheet">
 <link href="{{ asset('css/parsley.css') }}" rel="stylesheet">
 <link href="{{ asset('dist/css/AdminLTE.min.css') }}" rel="stylesheet">

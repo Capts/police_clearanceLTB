@@ -64,7 +64,7 @@
          </div> --}}
          <!-- /.col -->
          <div class="col-md-12">
-            <button type="submit" class="btn btn-primary btn-block btn-flat" >Register now!</button>
+            <button type="submit" class="btn btn-primary btn-block btn-flat" >Sign up now!</button>
 
          </div>
          <!-- /.col -->

@@ -1,7 +1,7 @@
 
      <p class="login-box-msg">Sign in to your account</p>
 
-     <form action="{{ route('login') }}" method="post">
+     <form action="{{ route('login') }}" method="post" data-parsley-validate="">
      {{ csrf_field() }}
         
         

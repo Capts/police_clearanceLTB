@@ -29,7 +29,7 @@ class PurposeTableSeeder extends Seeder
 
         $purpose4 = new Purpose();
         $purpose4->id = 4;
-        $purpose4->purpose = "Employment Abroad Requirement";
+        $purpose4->purpose = "Employment Local Requirement";
         $purpose4->save();
 
         $purpose5 = new Purpose();

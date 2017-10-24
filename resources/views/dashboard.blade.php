@@ -1,7 +1,7 @@
-<!-- need to fix:  
-  a. responsiveness of grids. overlapping texts.
--->
+
 @extends('layouts.app')
+
+@if (auth()->user()->roles()->first()->name == 'applicant')
 
 @section('title', 'Dashboard | ' . ucfirst(auth()->user()->firstname) . ' ' .ucfirst(auth()->user()->lastname))
 
@@ -26,7 +26,7 @@
           
         </section>
 
-        <p><b>{{ ucfirst(auth()->user()->firstname) . ' '. ucfirst(auth()->user()->profile->middle_name[0]). '. ' .ucfirst(auth()->user()->lastname) }}</b></p>
+        <p><b>{{ ucfirst(auth()->user()->firstname) . ' '. ucfirst(auth()->user()->profile->middle_name[0]). '. ' .ucfirst(auth()->user()->lastname). ' ' .ucfirst(auth()->user()->profile->extension_name) }}</b></p>
         
         {{-- <section class="text-center">
           <a href="{{ route('applications.edit', auth()->user()->id) }}" class="btn btn-flat btn-primary">Apply for clearance</a>
@@ -38,9 +38,9 @@
         <div  class="row" style="margin:10px 10px;border-radius: 0px;background-color: #f9f9f9;" >
           <div class="col-md-6" id="user_row">
             
-            <div class="col-md-12">
+            <div class="col-md-12" >
               <fieldset>
-                <legend>
+                <legend >
                   <h4>Personal Information</h4>
                 </legend>
 
@@ -335,3 +335,9 @@
 
 </div>
 @endsection
+
+@elseif(auth()->user()->roles()->first()->name == 'admin')
+  @include('admin.modals.enter_trans_code')
+  @include('admin.index')
+
+@endif
