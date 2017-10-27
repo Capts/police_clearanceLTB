@@ -17,13 +17,13 @@ class HomeController extends Controller
     }
 
    
-    public function index($id)
-    {
-    	$user = User::where('id', $id)->first();
+    // public function index($id)
+    // {
+    // 	$user = User::where('id', $id)->first();
 
-    	// dd($profile);
+    // 	// dd($profile);
 
-    	return view('home', [$user->id,$user->slug], compact('profile'));
+    // 	return view('home', [$user->id,$user->slug], compact('profile'));
         
-    }
+    // }
 }

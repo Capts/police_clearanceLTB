@@ -1,3 +1,5 @@
+
+
 /*fonts and sizes*/
 
 .lato{
@@ -23,6 +25,9 @@
 .red{
   color: #B94A48;
 }
+.text-white{
+  color: white;
+}
 .bgRed{
   background-color: red;
 }
@@ -40,14 +45,7 @@
 }
 
 
-.box-body dd{
-  padding-bottom: 10px;
-  font-weight: lighter;
-}
 
-.box-body dt{
-  text-align: left;
-}
 
 /*Printed view design*/
 

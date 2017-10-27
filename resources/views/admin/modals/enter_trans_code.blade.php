@@ -7,9 +7,9 @@
         
       </div>
       <div class="modal-body">
-        {!! Form::open(['method' => 'GET', 'route' => 'find_control_no','data-parsley-validate' => '']) !!}
+        {!! Form::open(['method' => 'GET', 'route' => 'search','data-parsley-validate' => '']) !!}
           <div class="input-group">
-            <input type="text" name="find" class="form-control input-lg" placeholder="Enter Control Number">
+            <input type="number" name="find" class="form-control input-lg" placeholder="Enter Control Number">
             <span class="input-group-btn">
               <button type="submit"  id="search-btn" class="btn btn-flat bg-primary btn-lg "><i class="fa fa-search"></i>
               </button>

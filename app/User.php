@@ -40,8 +40,8 @@ class User extends Authenticatable
         ->hasOne('App\Other');
     }
 
-    public function applied(){
-        return $this->hasMany('App\Applied');
+    public function application(){
+        return $this->hasMany('App\Application');
     }
 
 

@@ -1,30 +1,24 @@
 <aside class="main-sidebar">
   <!-- sidebar: style can be found in sidebar.less -->
-  <section class="sidebar">
+  <section class="sidebar lato">
     <!-- Sidebar user panel -->
     
-    <div class="user-panel">
+    <div class="user-panel no-padding">
+      <br>
       <div class=" text-center">
         {{-- <p class="text-center" style="margin-top: 10px;"> --}}
           
-          <img src="/img/baguio_logo.png" alt="" style="height: 100px;width: 100px;">
+          <img src="/img/benguet_logo.png" alt="" style="height: 100px;width: 100px;">
         {{-- </p> --}}
       </div>
-      <div class="text-center">
-        Police Clearance <br> Online Application <br>
-        <small>Baguio City, Benguet, PH</small> <br>
-        <small class="text-green  "><i class="fa fa-clock-o ">&nbsp;</i>open from 6AM-6PM</small>
+      <br>
+      <div class="text-center text-white">
+        <span class="no-padding">Police Clearance Online Application</span> <br>
+        <span class="no-padding">Philippine National Police</span> <br>
+        <small>Benguet, Philippines</small> <br>
+        <p class="text-green "><i class="fa fa-clock-o">&nbsp;</i>open from 6AM-6PM</p>
       </div>
     </div>
-   {{--  <div class="user-panel">
-      <div class="pull-left image">
-        <img src="{{ Storage::url(Auth::user()->avatar)}}" class="img-circle" alt="User Image">
-      </div>
-      <div class="pull-left info">
-        <p>{{ ucfirst(auth()->user()->firstname) .  ' ' . ucfirst(auth()->user()->lastname) }}</p>
-        <div class="text-aqua">{{ auth()->user()->email }}</div>
-      </div>
-    </div> --}}
    
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
@@ -42,13 +36,12 @@
         </ul>
       </li>
       
-      {{-- <li class="treeview"> --}}
       
       
       
       <li class="header">SETTINGS</li>
       <li><a href="{{ route('applicant.edit', auth()->user()->id) }}"><i class="fa fa-pencil"></i> <span>Edit information</span></a></li>
-      <li><a href="#"><i class="fa fa-cog"></i> <span>Change password</span></a></li>
+      <li><a href="{{ route('updatepass.get') }}"><i class="fa fa-cog"></i> <span>Change password</span></a></li>
      
       <li>
           <a href="{{ route('logout') }}"

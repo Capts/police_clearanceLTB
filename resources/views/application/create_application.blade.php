@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title',  ucfirst(auth()->user()->firstname).'| Apply for clearance ' )
+@section('title',  'Apply for clearance |'. ucfirst(auth()->user()->firstname) )
 
 @section('content')
 
@@ -30,12 +30,12 @@
 		  			@elseif(Session::has('danger'))
 		  				<div class="alert alert-danger" role="alert">
 		  					
-		  					<strong><i class="fa fa-trash"></i>Success! </strong> {{ Session::get('danger')}}
+		  					<strong><i class="fa fa-exclamation-o"></i> Warning, </strong> {{ Session::get('danger')}}
 		  				</div>
 		  			@endif 
 		  			<div class="box box-primary">
 		  				<div class="box-header with-border">
-		  					<h4><b>Purpose</b></h5>
+		  					<h4><b>What is your purpose?</b></h5>
 		  				</div>
 		  				<div class="box-body">
 		  					<div class="form-group{{ $errors->has('purpose') ? ' has-error' : '' }}">

@@ -11,7 +11,9 @@ Route::group(['middleware' => 'guest'], function(){
 //dash route
 Route::get('/dashboard', 'DashboardController@dashboard')->name('dashboard')->middleware('auth');
 
-
+//change password
+Route::get('change-password', 'Auth\UpdatePasswordController@updateget')->name('updatepass.get');
+Route::post('change-password', 'Auth\UpdatePasswordController@update')->name('updatepass.post');
 
 Auth::routes();
 
@@ -23,5 +25,6 @@ Route::resource('/applicant', 'ApplicantController');
 Route::get('/application/apply', 'ApplicationController@create')->name('application.create');
 Route::resource('/application', 'ApplicationController', ['except' => ['create']]);
 
-Route::get('/transactions/find', 'AdminController@find_control_no')->name('find_control_no');
-Route::get('/transactions', 'AdminController@transaction')->name('transaction.index');
+Route::get('/transactions/result', 'AdminController@result')->name('transaction.search'); //for result
+Route::get('/transactions/search', 'AdminController@search')->name('search'); //search method
+Route::get('/transactions', 'AdminController@transaction')->name('transaction.index'); //index

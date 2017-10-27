@@ -6,7 +6,7 @@
 @section('title', 'Dashboard | ' . ucfirst(auth()->user()->firstname) . ' ' .ucfirst(auth()->user()->lastname))
 
 @section('content')
-
+ 
 <div class="wrapper">
   @include('partials.nav')
   @include('partials.loggedin.sidebar')
@@ -34,8 +34,8 @@
       </section>
       
     <div class="row">
-      <section id="body_ng_user" class="col-md-12 col-lg-8 col-lg-offset-2 col-sm-12">
-        <div  class="row" style="margin:10px 10px;border-radius: 0px;background-color: #f9f9f9;" >
+      <section id="body_ng_user " class="col-md-12 col-lg-8 col-lg-offset-2 col-sm-12">
+        <div  class="row"  style="margin:10px 10px;border-radius: 0px;background-color: #fff;color:#0f0f0f">
           <div class="col-md-6" id="user_row">
             
             <div class="col-md-12" >
@@ -336,7 +336,7 @@
 </div>
 @endsection
 
-@elseif(auth()->user()->roles()->first()->name == 'admin')
+@else {{-- if(auth()->user()->roles()->first()->name == 'admin') --}}
   @include('admin.modals.enter_trans_code')
   @include('admin.index')
 

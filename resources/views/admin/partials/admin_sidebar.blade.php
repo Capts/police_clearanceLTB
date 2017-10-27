@@ -1,4 +1,4 @@
-@include('admin.modals.enter_trans_code')
+
 <aside class="main-sidebar">
   <!-- sidebar: style can be found in sidebar.less -->
   <section class="sidebar">
@@ -8,9 +8,14 @@
       <li class="header">NAVIGATION</li>
      
       
-      <li><a href="#" data-toggle="modal" data-target="#enter_trans_code"><i class="fa fa-server"></i> <span>Transactions</span></a></li>
+      <li><a href="{{ route('transaction.index') }}" ><i class="fa fa-briefcase"></i> <span>Appointments
+      @if ($applications->count() > 0)
+        <span class="label label-danger pull-right" style="margin-top: 7px;"> pending</span>
+
+      @endif
+      </span></a></li>
       
-      <li><a href="#"><i class="fa fa-cog"></i> <span>Change password</span></a></li>
+      <li><a href="{{ route('updatepass.get') }}"><i class="fa fa-cog"></i> <span>Change password</span></a></li>
      
       <li>
           <a href="{{ route('logout') }}"
