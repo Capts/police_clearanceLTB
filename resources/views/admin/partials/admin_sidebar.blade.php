@@ -8,14 +8,10 @@
       <li class="header">NAVIGATION</li>
      
       
-      <li><a href="{{ route('transaction.index') }}" ><i class="fa fa-briefcase"></i> <span>Appointments
-      @if ($applications->count() > 0)
-        <span class="label label-danger pull-right" style="margin-top: 7px;"> pending</span>
-
-      @endif
+      <li class="{{ Request::is('transactions') ? "active" : " " }}"><a href="{{ route('transaction.index') }}" ><i class="fa fa-briefcase"></i> <span>Appointments
       </span></a></li>
       
-      <li><a href="{{ route('updatepass.get') }}"><i class="fa fa-cog"></i> <span>Change password</span></a></li>
+      <li class="{{ Request::is('change-password') ? "active" : " " }}"><a href="{{ route('updatepass.get') }}"><i class="fa fa-cog"></i> <span>Change password</span></a></li>
      
       <li>
           <a href="{{ route('logout') }}"

@@ -25,12 +25,14 @@
          
           
         </section>
+        @if (is_null(auth()->user()->profile->middle_name))
+          <p><b>{{ ucfirst(auth()->user()->firstname) . ' '.ucfirst(auth()->user()->lastname). ' ' .ucfirst(auth()->user()->profile->extension_name) }}</b></p>
+        @else
 
-        <p><b>{{ ucfirst(auth()->user()->firstname) . ' '. ucfirst(auth()->user()->profile->middle_name[0]). '. ' .ucfirst(auth()->user()->lastname). ' ' .ucfirst(auth()->user()->profile->extension_name) }}</b></p>
+          <p><b>{{ ucfirst(auth()->user()->firstname) . ' '. ucfirst(auth()->user()->profile->middle_name[0]). '. ' .ucfirst(auth()->user()->lastname). ' ' .ucfirst(auth()->user()->profile->extension_name) }}</b></p>
+        @endif
         
-        {{-- <section class="text-center">
-          <a href="{{ route('applications.edit', auth()->user()->id) }}" class="btn btn-flat btn-primary">Apply for clearance</a>
-        </section> --}}
+      
       </section>
       
     <div class="row">
