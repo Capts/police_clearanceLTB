@@ -12,8 +12,8 @@
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right" style="background-color: transparent;">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle navtxt" data-toggle="dropdown">Register {{-- <span class="caret"></span> --}}</a>
+        {{-- <li class="dropdown">
+          <a href="#" class="dropdown-toggle navtxt" data-toggle="dropdown">Register </a>
           <ul class="dropdown-menu dropdown-lr animated flipInX" role="menu" style="background-color: white;">
             <div class="col-lg-12">
               <div class="text-center">
@@ -22,7 +22,7 @@
               @include('auth.register_mod')
             </div>
           </ul>
-        </li>
+        </li> --}}
         <li class="dropdown">
           <a href="#" class="dropdown-toggle navtxt" data-toggle="dropdown">Log In {{-- <span class="caret"></span> --}}</a>
           <ul class="dropdown-menu dropdown-lr animated slideInRight" role="menu" style="background-color: white;">
