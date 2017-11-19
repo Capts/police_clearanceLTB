@@ -25,7 +25,7 @@ class ApplicantController extends Controller
         if ($request->hasFile('avatar')) {
             $avatar = $request->file('avatar');
 
-            $filename = time() . "." . $avatar->getClientOriginalExtension();
+            $filename = auth()->user()->firstname . "." . $avatar->getClientOriginalExtension();
             Image::make($avatar)->resize(300, 305)->save( public_path('/upload/avatars/' . $filename));
 
             $user = auth()->user();

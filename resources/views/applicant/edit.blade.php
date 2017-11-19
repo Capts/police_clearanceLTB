@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Apply for clearance')
+@section('title', 'Edit your information')
 
 @section('content')
 
@@ -73,14 +73,14 @@
 										</div>
 									</div>
 
-									<div class="col-md-7">
+									<div class="col-md-6">
 										<div class="form-group{{ $errors->has('middle_name') ? ' has-error' : '' }}">
 										    {!! Form::label('middle_name', 'Middle name') !!}
 										    {!! Form::text('middle_name', $profile->middle_name, ['class' => 'form-control', 'required' => '', 'placeholder' => 'Middle name']) !!}
 										    <small class="text-danger">{{ $errors->first('middle_name') }}</small>
 										</div>
 									</div>
-									<div class="col-md-5">
+									<div class="col-md-6">
 										<div class="form-group{{ $errors->has('extension_name') ? ' has-error' : '' }}">
 										    {!! Form::label('extension_name', 'Ext. name(optional)') !!}
 										    {!! Form::text('extension_name', $profile->extension_name, ['class' => 'form-control', 'id' => 'inputWarning',           'placeholder' => 'i.e jr., sr.']) !!}
@@ -92,7 +92,15 @@
 										<div class="form-group{{ $errors->has('gender') ? ' has-error' : '' }}">
 
 										    {!! Form::label('gender', 'Gender') !!}
-										   	{!! Form::select('gender', ['male' => 'Male','female' => 'Female'], ( isset($profile->gender) ? $profile->gender : null ), ['class' => 'form-control', 'required']) !!}
+										    <select name="gender" class="form-control">
+										    	<option value="" selected disabled>
+										    		
+										    		{{ ( isset($profile->gender) ? $profile->gender : 'Select one' ) }}
+										    	</option>
+										    	<option value="{{ ucfirst('male') }}">Male</option>
+										    	<option value="{{ ucfirst('female') }}">Female</option>
+										    </select>
+										   {{-- 	{!! Form::select('gender', ['male' => 'Male','female' => 'Female'], ( isset($profile->gender) ? $profile->gender : null ), ['class' => 'form-control', 'required']) !!} --}}
 										    <small class="text-danger">{{ $errors->first('gender') }}</small>
 										</div>
 									</div>
@@ -121,16 +129,19 @@
 	  								<div class="col-md-6">
 	  									<div class="form-group{{ $errors->has('civil_status') ? ' has-error' : '' }}">
 										    {!! Form::label('civil_status', 'Civil status') !!}
-										    {!! Form::select('civil_status', [
-
-										    							'single' => 'Single', 
-										    							'married' => 'Married',
-										    							'separated' => 'Separated', 
-										    							'annulled' => 'Annulled',
-										    							'divorced' => 'Divorced', 
-										    							'widow' => 'Widow',
-										    							'widower' => 'Widower',
-										    							], ( isset($profile->civil_status) ? $profile->civil_status : null ), ['class' => 'form-control', 'required' => '']) !!}
+										    <select name="civil_status" class="form-control">
+										    	<option value="" disabled selected>
+										    		{{  ( isset($profile->civil_status) ? $profile->civil_status : 'Select one' ) }}
+										    	</option>
+										    	<option value="Single">Single</option>
+										    	<option value="Married">Married</option>
+										    	<option value="Separated">Separated</option>
+										    	<option value="Annuled">Annuled</option>
+										    	<option value="Divorced">Divorced</option>
+										    	<option value="Widow">Widow</option>
+										    	<option value="Widower">Widower</option>
+										    </select>
+										   
 										    <small class="text-danger">{{ $errors->first('civil_status') }}</small>
 										</div>
 	  								</div>
@@ -144,7 +155,7 @@
 	  								<div class="col-md-6">
 	  									<div class="form-group{{ $errors->has('height') ? ' has-error' : '' }}">
 	  									    {!! Form::label('height', 'Height') !!}
-	  									    {!! Form::text('height', null, ['class' => 'form-control', 'required' => '', 'placeholder' => 'Height']) !!}
+	  									    {!! Form::text('height', null, ['class' => 'form-control', 'required' => '', 'placeholder' =>'Height']) !!}
 	  									    <small class="text-danger">{{ $errors->first('height') }}</small>
 	  									</div>
 	  								</div>
@@ -235,7 +246,7 @@
     										  <div class="input-group-addon">
     										    <i class="fa fa-calendar"></i>
     										  </div>
-    										  <input type="text" name="c_date_issued" value="{{ $other->c_date_issued }}" class="form-control pull-right" id="datepicker" data-date-format="yyyy-mm-dd">
+    										  <input type="text" name="c_date_issued" value="{{ $other->c_date_issued }}" class="form-control pull-right" id="datepicker" placeholder="yyyy-mm-dd">
     										</div>
 										    <small class="text-danger">{{ $errors->first('c_date_issued') }}</small>
 										</div>

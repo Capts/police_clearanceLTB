@@ -107,19 +107,6 @@
     	timepicker:false,
     	
       });
-
-
-
-     
-
-      // $('#clickBtn').click(function(){
-      // 	if ($('#allInput input').val() == '')  {
-      // 		alert('not null');
-      // 	}else{
-      // 		alert('please fill up all fields');
-      // 	}
-      // });
-
      
   });
 

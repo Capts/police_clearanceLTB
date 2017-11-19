@@ -27,7 +27,7 @@ class ApplicationController extends Controller
     public function create()
     {
         $purposes = Purpose::all();
-        // $profile = Profile::where('user_id',$id)->first();
+     
 
         return view('application.create_application', compact('purposes'));
     }

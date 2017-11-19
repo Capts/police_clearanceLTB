@@ -1,5 +1,10 @@
 
-
+/*Video css*/
+#videoElement{
+  height: 500px;
+  width: 570px;
+  background-color: silver;
+}
 /*fonts and sizes*/
 
 .lato{

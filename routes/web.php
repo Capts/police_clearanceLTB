@@ -7,6 +7,15 @@ Route::group(['middleware' => 'guest'], function(){
 	});
 });
 
+//renew with unauthenticated
+// Route::get('renew', 'RenewController@proceedrenew')->name('proceedrenew');
+// Route::post('renew/proceed', 'RenewController@checkemail')->name('checkemail');
+// Route::post('renew/send_application', 'RenewController@store')->name('renew.store');
+
+
+
+//ajaxessssssssss
+Route::post('renew/checkemail', 'RenewController@check')->name('renew.check');
 
 //dash route
 Route::get('/dashboard', 'DashboardController@dashboard')->name('dashboard')->middleware('auth');

@@ -44,13 +44,17 @@
       });
       
 
-      $('#tokenfield').tokenfield({
-        showAutocompleteOnFocus: true
-      });
-
-     $('#datepicker').datepicker({
-      autoclose: true
+    $('#tokenfield').tokenfield({
+      showAutocompleteOnFocus: true
     });
+
+    $('#datepicker').datepicker(
+      {
+      autoclose: true,
+      format: 'yyyy-mm-dd',
+      maxDate: new Date
+      }
+    );
      $('#datepicker1').datepicker({
       autoclose: true
     });
