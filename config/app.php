@@ -74,6 +74,7 @@ return [
          * Package Service Providers...
          */
         MercurySeries\Flashy\FlashyServiceProvider::class,
+        Face\FaceServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         /*
          * Application Service Providers...
@@ -83,6 +84,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        'Softon\LaravelFaceDetect\FaceDetectServiceProvider', 
+
 
     ],
 
@@ -125,6 +128,8 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Flashy' => MercurySeries\Flashy\Flashy::class,
         'Image' => Intervention\Image\Facades\Image::class,
+        'Face' => Face\Facades\Face::class,
+        'FaceDetect' => 'Softon\LaravelFaceDetect\Facades\FaceDetect', 
 
     ],
 

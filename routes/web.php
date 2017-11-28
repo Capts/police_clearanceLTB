@@ -15,7 +15,7 @@ Route::group(['middleware' => 'guest'], function(){
 
 
 //ajaxessssssssss
-Route::post('renew/checkemail', 'RenewController@check')->name('renew.check');
+Route::post('renew', 'RenewController@check')->name('renew.check');
 
 //dash route
 Route::get('/dashboard', 'DashboardController@dashboard')->name('dashboard')->middleware('auth');

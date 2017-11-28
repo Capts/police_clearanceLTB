@@ -9,10 +9,13 @@ use App\Other;
 use App\Profile;
 use App\Purpose;
 use App\User;
+use Face\Facades\Face;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Image;
+use JD\Cloudder\Facades\Cloudder;
 use Session;
+use Softon\LaravelFaceDetect\Facades\FaceDetect;
 
 
 class ApplicantController extends Controller
@@ -25,9 +28,11 @@ class ApplicantController extends Controller
         if ($request->hasFile('avatar')) {
             $avatar = $request->file('avatar');
 
-            $filename = auth()->user()->firstname . "." . $avatar->getClientOriginalExtension();
-            Image::make($avatar)->resize(300, 305)->save( public_path('/upload/avatars/' . $filename));
+            $filename = auth()->user()->email . "." . $avatar->getClientOriginalExtension();
+            
+            Image::make($avatar)->resize(300, 300)->save( public_path('/upload/avatars/' . $filename));
 
+           
             $user = auth()->user();
             $user->avatar =$filename;
             $user->save();

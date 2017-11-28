@@ -13,28 +13,32 @@ class RenewController extends Controller
 {
 
     public function check(Request $request){
-        // return $request->all();
+        
 
         $checkEmail = User::where('email', $request->email)->with(['application','profile'])->first();
 
         if (is_null($checkEmail)) {
             Session::flash('registerfirst', 'This email is not yet registered');
-            // return redirect()->back();
+            return redirect()->back();
         }else{
             if ($checkEmail->application->count() == 1) {
                     Session::flash('existingapplication', 'Unable to submit application due to pending appointment.');
-                    // return redirect()->back();
+                    return redirect()->back();
             }elseif(is_null($checkEmail->profile->gender)){
-
                 Session::flash('profile-not-edited', 'Unable to submit application because your profile is not complete.');
-                // return redirect()->back();
+                return redirect()->back();
             }else{
-                 // return response()->json(['success'=>true]);
+                $purposes = Purpose::all();
+                $getUser = User::where('email', $request->email)->with(['application','profile'])->first();
+                // dd($getUser);
+                return view('renew.renewform', compact('purposes', 'getUser'));
             }
          }
 
 
     }
+
+    
     
     // public function checkemail(Request $request){
     	
@@ -68,31 +72,31 @@ class RenewController extends Controller
     // 	return view('renew');
     // }
 
-    // public function store(Request $request)
-    // {
+    public function store(Request $request)
+    {
 
-    //     $getUser = User::where('email', $request->email)->first();
-    //     $checkEmail = User::where('email', $request->email)->first();
-    //     // dd($checkEmail);
-    //     $checkApplications = Application::where('user_id', $getUser->id)->count();
-    //     // dd($checkApplications);
+        $getUser = User::where('email', $request->email)->first();
+        $checkEmail = User::where('email', $request->email)->first();
+        // dd($checkEmail);
+        $checkApplications = Application::where('user_id', $getUser->id)->count();
+        // dd($checkApplications);
        
-    //     if ($checkApplications < 1)  {
+        if ($checkApplications < 1)  {
 
-    //         $application = new Application();
+            $application = new Application();
 
-    //         $application->user_id = $request->id;
-    //         $application->control_no = date('di-').rand(111111111, 999999999);
-    //         $application->name = $request->firstname. ' ' .$request->lastname;
-    //         $application->purpose = $request->purpose;
-    //         $application->appointment_date = $request->appointment_date;
-    //         $application->save();
+            $application->user_id = $request->id;
+            $application->control_no = date('di-').rand(111111111, 999999999);
+            $application->name = $request->firstname. ' ' .$request->lastname;
+            $application->purpose = $request->purpose;
+            $application->appointment_date = $request->appointment_date;
+            $application->save();
 
-    //         Session::flash('success', 'Application sent!');
-    //         return "done";
-    //     }
+            Session::flash('success', 'Application sent!');
+            return "done";
+        }
         
-    // }
+    }
 
 
 

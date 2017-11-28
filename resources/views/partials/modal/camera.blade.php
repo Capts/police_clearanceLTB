@@ -3,11 +3,11 @@
 <div class="modal fade" id="camera" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-md" role="document">
     <div class="modal-content">
-      <div class="modal-header bg-olive">
+      <div class="modal-header" style="background-color:#4d8ba8 ; color:white;">
 
         <h4 class="modal-title text-center" id="exampleModalLabel">
           {{-- <i class="fa fa-camera pull-left"></i> --}}
-            <a href="#"><i  class="fa fa-arrow-circle-left fa-2x pull-left  bg-olive" id="back" style="display: none;cursor: pointer;"></i></a>
+            <a href="#"><i  class="fa fa-arrow-circle-left fa-2x pull-left" id="back" style="color:white;display: none;cursor: pointer;"></i></a>
           Renew your clearance with your photo
           <i class="fa fa-times pull-right" id="remove_when_error" class="close" data-dismiss="modal" aria-label="Close"></i>
         </h4>
@@ -20,37 +20,31 @@
      
            
                 <div class="col-md-12">
-                  <form data-parsley-validate data-parsley-type="email" id="form">
+                  <form method="POST" data-parsley-validate data-parsley-type="email" id="form" action="{{ route('renew.check') }}">
+                    {{ csrf_field() }}
                     <label for="checkemail">Enter your email</label>
                     <input name="email" type="email" id="checkemail" class="form-control text-center" required="" >
                     <br>
-                    <button class="btn btn-flat bg-olive" id="checknow">Go</button>
+                    <button class="btn btn-flat btn-primary btn-block" id="checknow">Go</button>
                   </form>
 
               
                 </div>
-
-                
-          
-         
-             
-           
-         
-           
           </div>
-           <div id="takeform" style="display: none;" class=" with-padding">
+
+          <div id="takeform" style="display: none;" class=" with-padding">
             <p>take a photo</p>
           </div>
         
           <div class="col-md-12 text-center">
             <div class="btn-group">
-              <a href="#" class="btn btn-flat bg-olive" id="upload" style="margin-right: 10px;">Upload photo</a>
-              <a href="#" class="btn btn-flat bg-olive" id="take">Take a photo</a>
+              <a href="#" class="btn btn-flat btn-primary" id="upload" style="margin-right: 10px;">Upload photo</a>
+              <a href="#" class="btn btn-flat btn-primary" id="take">Take a photo</a>
             </div>
 
             <div class="btn-group">
-              <a href="#" class="btn btn-flat bg-olive" id="goUpload" style="display: none;">Upload photo</a>
-              <a href="#" class="btn btn-flat bg-olive" id="goTake" style="display: none;">Take a photo</a>
+              <a href="#" class="btn btn-flat btn-primary" id="goUpload" style="display: none;">Upload photo</a>
+              <a href="#" class="btn btn-flat btn-primary" id="goTake" style="display: none;">Take a photo</a>
             </div>
           </div>
 
@@ -90,39 +84,18 @@
   $(document).ready(function() {
 
     //checkemail
-    $('#checknow').on('click', function(){
-      var email = $('#checkemail').val();
-      $.post('renew/checkemail', {'email': email, '_token': $('input[name=_token]').val()}, function(data) {
-        /*optional stuff to do after success */
-          console.log(data);
+    // $('#checknow').on('click', function(){
+    //   var email = $('#checkemail').val();
+    //   $.post('renew/checkemail', {'email': email, '_token': $('input[name=_token]').val()}, function(data) {
+    //     /*optional stuff to do after success */
+    //       console.log(data);
           
-        // $('#refWelcome').load(location.href + ' #refWelcome');
-      });
-    });
+    //     // $('#refWelcome').load(location.href + ' #refWelcome');
+    //   });
+    // });
 
 
-    var $form = $('#form');
-
-    var $submit = $form.find('submit');
-
-    var checkValid = function(){
-       if( $form.parsley('isValid') ) {
-          $submit.removeAttr("disabled");
-       } else {
-          $submit.attr("disabled", "disabled");
-       }
-    }
-    checkValid();
-
-    $form.parsley( 'addListener', {
-       onFieldSuccess: function ( elem ) {
-          checkValid();
-       }
-       , onFieldError: function ( elem ) {
-          checkValid();
-       }
-    } );
-
+  
 
 
 
