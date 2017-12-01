@@ -31,14 +31,37 @@
 
     
 
-      <span class='text-gray text-center' id="hideWord"><h3><i class="fa fa-check-circle"></i> Re-new your application with your photo! </h3></span>
-        <div class="col-md-5 col-md-offset-1" id="hideIcon">
+      <center class='text-gray text-center' id="hideWord"><h3><i class="fa fa-check-circle"></i> Re-new your application with your photo! </h3></center>
+        <div class="col-md-12 col-lg-6 col-lg-offset-3" id="hideIcon">
           
 
-            <a href="#" class="" data-toggle="modal" data-target="#camera">
+            {{-- <a href="#" class="" data-toggle="modal" data-target="#camera">
               <h1 class=" text-gray text-center"><i class="fa fa-camera fa-3x"></i></h1>
-            </a>
-      
+            </a> --}}
+
+          <center></center>>  
+              <a href="#" class="btn btn-flat btn-danger btn-block btn-lg">Take a picture</a>
+              <p class="text-center" style="color:white;font-size: 18px;">or</p>
+              <div class="box box-danger">
+                <div class="box-body">
+                  <form action="#" method="POST" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                    <div class="modal-body">
+
+                        
+                      
+                  
+                        <label for="">Select image</label>
+                        <input type="file" name="avatar">
+                     
+                    </div>
+                    <section class="modal-footer text-center">
+                       <button class="btn btn-flat btn-primary text-center btn-block" data-toggle="tooltip" title="Upload now">Upload now</button>
+                     </section>
+
+                  </form>
+                </div>
+              </div>
 
          
         </div>
