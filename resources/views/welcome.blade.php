@@ -7,6 +7,7 @@
 
 @include('partials.modal.enteremail')
 @include('partials.modal.camera')
+@include('renew.take_a_picture_modal')
 <div class="row" style="margin:30px auto;height: 500px;" id="refWelcome">
   
   
@@ -40,7 +41,7 @@
             </a> --}}
 
           <center></center>>  
-              <a href="#" class="btn btn-flat btn-danger btn-block btn-lg">Take a picture</a>
+              <a href="#" class="btn btn-flat btn-danger btn-block btn-lg" data-toggle="modal" data-target="#take_picture_modal">Take a picture</a>
               <p class="text-center" style="color:white;font-size: 18px;">or</p>
               <div class="box box-danger">
                 <div class="box-body">
