@@ -7,7 +7,7 @@
 
 @include('partials.modal.enteremail')
 @include('partials.modal.camera')
-@include('renew.take_a_picture_modal')
+{{-- @include('renew.take_a_picture_modal') --}}
 <div class="row" style="margin:30px auto;height: 500px;" id="refWelcome">
   
   
@@ -40,22 +40,24 @@
               <h1 class=" text-gray text-center"><i class="fa fa-camera fa-3x"></i></h1>
             </a> --}}
 
-          <center></center>>  
-              <a href="#" class="btn btn-flat btn-danger btn-block btn-lg" data-toggle="modal" data-target="#take_picture_modal">Take a picture</a>
+              <a href="{{ url('/take-picture') }}" class="btn btn-flat btn-danger btn-block btn-lg">Take a picture</a>  
+
+
               <p class="text-center" style="color:white;font-size: 18px;">or</p>
+
               <div class="box box-danger">
                 <div class="box-body">
                   <form action="#" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="modal-body">
 
-                        
-                      
                   
                         <label for="">Select image</label>
                         <input type="file" name="avatar">
-                     
+             
+
                     </div>
+
                     <section class="modal-footer text-center">
                        <button class="btn btn-flat btn-primary text-center btn-block" data-toggle="tooltip" title="Upload now">Upload now</button>
                      </section>
@@ -74,6 +76,11 @@
   		<div class="box-header with-border text-center"><h3>SIGN UP</h3></div>
   		<div class="box-body">
   			 @include('auth.register_mod')
+
+                     <video id="video" width="400" height="400"></video>
+                     <canvas id="canvas"></canvas><br>
+                     <button onClick="snap();">snap</button>
+                      
        
   		</div>
   	</div>
@@ -86,5 +93,29 @@
 </div>
 <br>
 <br>
+<script type="text/javascript">
+  var video = document.getElementById('video');
+  var canvas = document.getElementById('canvas');
+  var context = canvas.getContext('2d');
 
+  navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+
+  if(navigator.getUserMedia){
+    navigator.getUserMedia({video:true}, streamWebCam, throwError);
+  }
+
+  function streamWebCam (stream){
+    video.src = window.URL.createObjectURL(stream);
+  }
+
+  function throwError(e){
+    alert(e.name);
+  }
+
+  function snap(){
+    canvas.width = video.clientWidth;
+    canvas.height = video.clientHeight;
+    context.drawImage(video, 0, 0);
+  }
+</script>
 @endsection

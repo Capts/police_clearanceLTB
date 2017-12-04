@@ -15,7 +15,7 @@
         {{-- @include('partials.loggedin.main_nav') --}}
       @endguest
         
-        
+        @yield('scripts_track')
         @yield('content') 
         
     </div>

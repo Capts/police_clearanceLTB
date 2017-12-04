@@ -31,7 +31,7 @@
           <div class="box box-primary">
             <div class="box-header with-border">
                 <div class="col-md-7">
-                  <h4>Matches items</h4>
+                  <h4>Matched items</h4>
                 </div>
                 <div class="col-md-5">
                   {!! Form::open(['method' => 'GET', 'route' => 'search']) !!}

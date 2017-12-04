@@ -7,6 +7,13 @@ Route::group(['middleware' => 'guest'], function(){
 	});
 });
 
+
+// Route::group(['middleware' => 'use.ssl'], function () {
+    Route::get('/take-picture', function () {
+         return view('take_a_picture');
+    });
+// });
+
 //renew with unauthenticated
 // Route::get('renew', 'RenewController@proceedrenew')->name('proceedrenew');
 // Route::post('renew/proceed', 'RenewController@checkemail')->name('checkemail');
