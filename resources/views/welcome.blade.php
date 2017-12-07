@@ -40,9 +40,9 @@
               <h1 class=" text-gray text-center"><i class="fa fa-camera fa-3x"></i></h1>
             </a> --}}
 
-          <center></center>>  
-              <a href="#" class="btn btn-flat btn-danger btn-block btn-lg" data-toggle="modal" data-target="#take_picture_modal">Take a picture</a>
-              <p class="text-center" style="color:white;font-size: 18px;">or</p>
+          
+              <a href="#" class="btn btn-flat btn-primary btn-block btn-lg" data-toggle="modal" data-target="#take_picture_modal"><i class="fa fa-camera"></i> Take a picture</a>
+              {{-- <p class="text-center" style="color:white;font-size: 18px;">or</p>
               <div class="box box-danger">
                 <div class="box-body">
                   <form action="#" method="POST" enctype="multipart/form-data">
@@ -63,7 +63,7 @@
                   </form>
                 </div>
               </div>
-
+ --}}
          
         </div>
   
