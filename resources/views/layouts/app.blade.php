@@ -4,7 +4,7 @@
     @include('partials.head')
 </head>
 {{-- <body style="background-color: #4d8ba8;height: auto;padding-bottom: 0px;"> --}}
-<body class="hold-transition skin-blue sidebar-mini lato" style="height: auto;padding-bottom: 0px;background-color: #4d8ba8;">
+<body onload="init();" class="hold-transition skin-blue sidebar-mini lato" style="height: auto;padding-bottom: 0px;background-color: #4d8ba8;">
     
     <div id="app">
     

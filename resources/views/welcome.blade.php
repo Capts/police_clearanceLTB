@@ -37,32 +37,10 @@
           
 
 
-              <a href="{{ url('/take-picture') }}" class="btn btn-flat btn-danger btn-block btn-lg">Take a picture</a>  
+              <a href="{{ url('/take-picture') }}" class="btn btn-flat btn-primary btn-block btn-lg"><i class="fa fa-camera"></i> Take a picture</a>  
 
 
-             {{--  <p class="text-center" style="color:white;font-size: 18px;">or</p>
-
-
-              <div class="box box-danger">
-                <div class="box-body">
-                  <form action="#" method="POST" enctype="multipart/form-data">
-                    {{ csrf_field() }}
-                    <div class="modal-body">
-
-                  
-                        <label for="">Select image</label>
-                        <input type="file" name="avatar">
-             
-
-                    </div>
-
-                    <section class="modal-footer text-center">
-                       <button class="btn btn-flat btn-primary text-center btn-block" data-toggle="tooltip" title="Upload now">Upload now</button>
-                     </section>
-
-                  </form>
-                </div>
-              </div> --}}
+           
 
          
         </div>
@@ -74,10 +52,10 @@
   		<div class="box-header with-border text-center"><h3>SIGN UP</h3></div>
   		<div class="box-body">
   			 @include('auth.register_mod')
-
+{{-- 
                      <video id="video" width="400" height="400"></video>
                      <canvas id="canvas"></canvas><br>
-                     <button onClick="snap();">snap</button>
+                     <button onClick="snap();">snap</button> --}}
                       
        
   		</div>
